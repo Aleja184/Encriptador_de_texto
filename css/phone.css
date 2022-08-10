@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    background-color:#E5E5E5;;
+}
+header img{
+    width:32px;
+    height: 48px;
+    margin-left:16px ;
+    margin-top: 24px;
+}
+.write{
+    font-size:32px;
+    border: none;
+    text-align: center;
+    height: 300px;
+    background-color: #E5E5E5;
+}
+::placeholder{
+    color: #0A3871;
+}
+.indication{
+    font-size: 12px;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 5% 95%;
+}
+
+.buttons{
+    display:grid;
+    justify-content: center;
+}
+.buttons .encrypt , .decrypt{
+    width: 300px;
+    margin: 10px;
+    height: 50px;
+    border-radius: 20px;
+    border: 0.5px solid #0A3871;
+}
+.buttons .encrypt{
+    background-color: #0A3871;
+    color: #ffffff;
+}
+.buttons .decrypt{
+    color: #0A3871;
+}
+.message{
+    height: 186px;
+    background-color: #ffffff;
+    margin: 50px 24px 40px 24px ;
+    text-align: center;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+}
+.message p strong{
+    font-size: 24px;
+    font-weight: 700;
+}
+.message .text2{
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px 10px 0px 10px;
+}

@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
     <link rel="stylesheet" href="./css/phone.css" media="(min-width:375px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="icon"></div>
-    <input type="text" placeholder="Ingrese el texto aquí">
-    <section class="indication"></section>
-    <button class="encrypt">Encriptar</button>
-    <button class="decrypt">Desencriptar</button>
+    <header><img src="./assets/Logo.png" alt="Logo de Alura" srcset=""></header>
+    <input type="text" placeholder="Ingrese el texto aquí" class="write">
+    <section class="indication">
+        <img src="./assets/Admiracion.png" alt="Signo de admiración" srcset="" class="indication-img">
+        <p>Solo letras minúsculas y sin acentos</p>
+    </section>
+    <section class="buttons">
+        <button class="encrypt">Encriptar</button>
+        <button class="decrypt">Desencriptar</button>
+    </section>
+    
     <div class="message">
-        <p>Ningún mensaje fue encontrado</p>
-        <p>Ingresa el texto que deseas encriptar o desencriptar</p>
+        <p><strong>Ningún mensaje fue encontrado</strong></p>
+        <p class="text2">Ingresa el texto que deseas encriptar o desencriptar</p>
     </div>
 </body>
 </html>
