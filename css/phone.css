@@ -16,13 +16,12 @@ header img{
 .write{
     font-size:32px;
     border: none;
-    text-align: center;
     height: 300px;
     background-color: #E5E5E5;
+    margin: 10px 0px 0px 10px;
+    color:#0A3871;
 }
-::placeholder{
-    color: #0A3871;
-}
+
 .indication{
     font-size: 12px;
     margin: 10px;
