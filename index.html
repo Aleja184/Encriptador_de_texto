@@ -16,19 +16,20 @@
         <img src="./assets/Logo.png" alt="Logo de Alura" srcset="">
         </h1>
     </header>
-    <textarea type="text" class="write" >Ingrese el texto aquí</textarea>
+    <textarea type="text" class="write" placeholder="Ingrese el texto aquí" rows="8" id="write"></textarea>
     <section class="indication">
         <img src="./assets/Admiracion.png" alt="Signo de admiración" srcset="" class="indication-img">
         <p>Solo letras minúsculas y sin acentos</p>
     </section>
     <section class="buttons">
-        <button class="encrypt">Encriptar</button>
-        <button class="decrypt">Desencriptar</button>
+        <button class="encrypt" id="encrypt">Encriptar</button>
+        <button class="decrypt" id="decrypt">Desencriptar</button>
     </section>
     
     <div class="message">
-        <p><strong>Ningún mensaje fue encontrado</strong></p>
+        <p id="no-message"><strong>Ningún mensaje fue encontrado</strong></p>
         <p class="text2">Ingresa el texto que deseas encriptar o desencriptar</p>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

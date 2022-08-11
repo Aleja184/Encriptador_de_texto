@@ -21,6 +21,11 @@ header img{
     margin: 10px 0px 0px 10px;
     color:#0A3871;
 }
+textarea{
+    overflow: hidden;
+    margin: 50px auto;
+    display: block;
+}
 
 .indication{
     font-size: 12px;
@@ -44,8 +49,14 @@ header img{
     background-color: #0A3871;
     color: #ffffff;
 }
+.buttons .encrypt:hover{
+    background-color: #0a3871d9;
+}
 .buttons .decrypt{
     color: #0A3871;
+}
+.buttons .decrypt:hover{
+    background-color: #ffffff;
 }
 .message{
     height: 186px;
