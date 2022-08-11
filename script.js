@@ -1,11 +1,12 @@
-var textarea = document.getElementById('write');
+var textarea = document.querySelector('textarea');
+var write = document.getElementById('write');
 var encrypt = document.getElementById('encrypt');
 var decrypt = document.getElementById('decrypt');
 var noMessage = document.getElementById('no-message');
 var text2 = document.getElementById('text2');
 textarea.addEventListener('keydown',autosize);
 encrypt.onclick = encriptar;
-var nuevoMensaje = [];
+
 
 function autosize(){
     var el = this;
@@ -15,7 +16,7 @@ function autosize(){
     },0)
 }
 function comprobarMayusculaYAcento(){
-    var textoEncriptar = textarea.value;
+    var textoEncriptar = write.value;
     var comprobacion = false;
     for(var i=0;i<textoEncriptar.length;i++){
         if((textoEncriptar.charCodeAt(i)>=65 && textoEncriptar.charCodeAt(i)<=90) || (/[áéíóú]/.test(textoEncriptar.charAt(i)))){
@@ -27,15 +28,16 @@ function comprobarMayusculaYAcento(){
 }
 
 function encriptar(){
-    for(var i= 0;i<textarea.value.length;i++){
-        nuevoMensaje.push(textarea.value.charAt(i));
+    var nuevoMensaje = [];
+    for(var i= 0;i<write.value.length;i++){
+        nuevoMensaje.push(write.value.charAt(i));
     }
     if(comprobarMayusculaYAcento()){
-        textarea.value = "";
-        textarea.focus();
+        write.value = "";
+        write.focus();
     }else{
-        for(var i= 0; i<textarea.value.length;i++){
-            switch(textarea.value.charAt(i)){
+        for(var i= 0; i<write.value.length;i++){
+            switch(write.value.charAt(i)){
                 case "a":
                     nuevoMensaje[i]="ai";
                 break;
@@ -60,5 +62,9 @@ function encriptar(){
     }
     nuevoMensaje = nuevoMensaje.join("");
     nuevoMensaje = nuevoMensaje.toString();
-    noMessage.innerHTML = nuevoMensaje;
+    noMessage.style.fontSize = "24px";
+    noMessage.style.fontWeight = "400";
+    noMessage.style.color = "#495057";
+    noMessage.value = nuevoMensaje;
 }
+noMessage.addEventListener('keydown',autosize);
