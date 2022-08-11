@@ -13,19 +13,20 @@ function autosize(){
         el.style.cssText = 'height:' + el.scrollHeight+ 'px';
     },0)
 }
-function comprobarMayuscula(){
+function comprobarMayusculaYAcento(){
     var textoEncriptar = textarea.value;
     var comprobacion = false;
     for(var i=0;i<textoEncriptar.length;i++){
-        if(textoEncriptar.charCodeAt(i)>=65 && textoEncriptar.charCodeAt(i)<=90){
+        if((textoEncriptar.charCodeAt(i)>=65 && textoEncriptar.charCodeAt(i)<=90) || (/[áéíóú]/.test(textoEncriptar.charAt(i)))){
             comprobacion = true;
             break;
         }
     }
     return comprobacion;
 }
+
 function encriptar(){
     var textoEncriptar = textarea.value;
-    
+    alert(comprobarMayusculaYAcento())
 }
 
