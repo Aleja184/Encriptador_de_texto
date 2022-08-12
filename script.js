@@ -35,8 +35,8 @@ function encriptar(){
     if(comprobarMayusculaYAcento()){
         textarea.value = "";
         textarea.focus();
-        noMessage.innerHTML = "Ningún mensaje fue encontrado";
-        noMessage.style.fontSize = '28px';
+        noMessage.innerHTML = "Sólo ingrese letras minúsculas y sin acentos.<br>Intente de nuevo";
+        noMessage.style.fontSize = '20px';
         noMessage.style.fontWeight ='700';
     }else{
         for(var i= 0; i<textarea.value.length;i++){

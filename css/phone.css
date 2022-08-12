@@ -55,8 +55,8 @@ textarea{
 .buttons .decrypt{
     color: #0A3871;
 }
-.buttons .decrypt:hover{
-    background-color: #ffffff;
+.decrypt:hover{
+    background-color: rgba(136, 136, 136, 0.2);
 }
 .message{
     height: auto;
