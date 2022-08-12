@@ -1,11 +1,11 @@
-var textarea = document.querySelector('textarea');
-var write = document.getElementById('write');
+var textarea = document.getElementById('write');
 var encrypt = document.getElementById('encrypt');
 var decrypt = document.getElementById('decrypt');
 var noMessage = document.getElementById('no-message');
-var text2 = document.getElementById('text2');
+var text = document.getElementById('text2');
 textarea.addEventListener('keydown',autosize);
 encrypt.onclick = encriptar;
+var copy = document.getElementById('copy');
 
 
 function autosize(){
@@ -16,7 +16,7 @@ function autosize(){
     },0)
 }
 function comprobarMayusculaYAcento(){
-    var textoEncriptar = write.value;
+    var textoEncriptar = textarea.value;
     var comprobacion = false;
     for(var i=0;i<textoEncriptar.length;i++){
         if((textoEncriptar.charCodeAt(i)>=65 && textoEncriptar.charCodeAt(i)<=90) || (/[áéíóú]/.test(textoEncriptar.charAt(i)))){
@@ -29,15 +29,18 @@ function comprobarMayusculaYAcento(){
 
 function encriptar(){
     var nuevoMensaje = [];
-    for(var i= 0;i<write.value.length;i++){
-        nuevoMensaje.push(write.value.charAt(i));
+    for(var i= 0;i<textarea.value.length;i++){
+        nuevoMensaje.push(textarea.value.charAt(i));
     }
     if(comprobarMayusculaYAcento()){
-        write.value = "";
-        write.focus();
+        textarea.value = "";
+        textarea.focus();
+        noMessage.innerHTML = "Ningún mensaje fue encontrado";
+        noMessage.style.fontSize = '28px';
+        noMessage.style.fontWeight ='700';
     }else{
-        for(var i= 0; i<write.value.length;i++){
-            switch(write.value.charAt(i)){
+        for(var i= 0; i<textarea.value.length;i++){
+            switch(textarea.value.charAt(i)){
                 case "a":
                     nuevoMensaje[i]="ai";
                 break;
@@ -59,12 +62,16 @@ function encriptar(){
                 break;
             }
         }
+        nuevoMensaje = nuevoMensaje.join("");
+        nuevoMensaje = nuevoMensaje.toString();
+        noMessage.style.fontSize = '20px';
+        noMessage.style.width = '263px';
+        noMessage.style.height ='auto';
+        noMessage.style.wordBreak ='break-all';
+        noMessage.innerHTML = nuevoMensaje;
     }
-    nuevoMensaje = nuevoMensaje.join("");
-    nuevoMensaje = nuevoMensaje.toString();
-    noMessage.style.fontSize = "24px";
-    noMessage.style.fontWeight = "400";
-    noMessage.style.color = "#495057";
-    noMessage.value = nuevoMensaje;
+    text.style.visibility = 'hidden';
+    text.style.position = 'absolute';
+    copy.style.display = 'block';
+    
 }
-noMessage.addEventListener('keydown',autosize);
