@@ -38,6 +38,7 @@ function encriptar(){
         noMessage.innerHTML = "Sólo ingrese letras minúsculas y sin acentos.<br>Intente de nuevo";
         noMessage.style.fontSize = '20px';
         noMessage.style.fontWeight ='700';
+        copy.style.display = 'none';
     }else{
         for(var i= 0; i<textarea.value.length;i++){
             switch(textarea.value.charAt(i)){
@@ -68,10 +69,13 @@ function encriptar(){
         noMessage.style.width = '263px';
         noMessage.style.height ='auto';
         noMessage.style.wordBreak ='break-all';
+        noMessage.style.width='100%';
+        noMessage.style.textAlign = 'center';
         noMessage.innerHTML = nuevoMensaje;
+        text.style.visibility = 'hidden';
+        text.style.position = 'absolute';
+        copy.style.display = 'block';
     }
-    text.style.visibility = 'hidden';
-    text.style.position = 'absolute';
-    copy.style.display = 'block';
+   
     
 }

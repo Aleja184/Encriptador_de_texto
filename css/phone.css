@@ -3,9 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body{
+    overflow-x:hidden;
+    }
+
 body{
     font-family: 'Inter', sans-serif;
-    background-color:#E5E5E5;;
+    background-color:#E5E5E5;
 }
 header img{
     width:32px;
@@ -17,7 +21,7 @@ header img{
     font-size:32px;
     border: none;
     height: 300px;
-    background-color: #E5E5E5;
+    background-color: #e5e5e569;
     margin: 10px 0px 0px 10px;
     color:#0A3871;
 }
@@ -80,8 +84,68 @@ textarea{
     font-weight: 400;
     margin: 0px 10px 0px 10px;
 }
+.button-copy{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100%;
+    justify-content: center;
+}
 #copy{
     color: #0A3871;
     display: none;
-    width: 260px;
+    width: 230px;
+}
+
+@media(min-width:600px){
+    header{
+        width: 100%;
+    }
+    header img{
+        width: 32px;
+        height: 47px;
+        margin: 50px;
+    }
+    .write{
+        height: 600px;
+        margin:0 0 0 50px;
+        font-size: 36px;
+        width: 550px;
+    }
+    .indication{
+        margin: 30px 50px 20px 50px;
+    }
+    .indication img{
+        width: 25px;
+        height: 25px;
+    }
+    .indication p{
+        font-size: 20px;
+        margin-left: 5px;
+        width: 100%;
+    }
+    .buttons{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        width: 100%;
+        margin: 0 0 0 40px;
+    }
+    .buttons .encrypt , .decrypt{
+        height: 60px;
+        font-size: 18px;
+        font-weight: 400;
+        width: 230px;
+        margin-left: 10px;
+    }
+
+    .message{
+        min-width: 500px;
+        margin-left: 50px;
+    }
+    .message p{
+        text-align: center;
+        width: 100%;
+    }
+    #copy{
+        margin-left: 80px;
+    }
 }
