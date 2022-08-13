@@ -6,7 +6,7 @@ var text = document.getElementById('text2');
 textarea.addEventListener('keydown',autosize);
 encrypt.onclick = encriptar;
 var copy = document.getElementById('copy');
-
+copy.onclick = copiar;
 
 function autosize(){
     var el = this;
@@ -33,12 +33,12 @@ function encriptar(){
         nuevoMensaje.push(textarea.value.charAt(i));
     }
     if(comprobarMayusculaYAcento()){
-        textarea.value = "";
         textarea.focus();
         noMessage.innerHTML = "Sólo ingrese letras minúsculas y sin acentos.<br>Intente de nuevo";
         noMessage.style.fontSize = '20px';
         noMessage.style.fontWeight ='700';
         copy.style.display = 'none';
+        textarea.value = "";
     }else{
         for(var i= 0; i<textarea.value.length;i++){
             switch(textarea.value.charAt(i)){
@@ -63,6 +63,7 @@ function encriptar(){
                 break;
             }
         }
+        
         nuevoMensaje = nuevoMensaje.join("");
         nuevoMensaje = nuevoMensaje.toString();
         noMessage.style.fontSize = '20px';
@@ -75,7 +76,16 @@ function encriptar(){
         text.style.visibility = 'hidden';
         text.style.position = 'absolute';
         copy.style.display = 'block';
+        textarea.value = '';
     }
    
     
+}
+function copiar(){
+    var seleccion = document.createRange();
+    seleccion.selectNodeContents(noMessage);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(seleccion);
+    var res = document.execCommand('copy');
+    window.getSelection().removeRange(seleccion);
 }
