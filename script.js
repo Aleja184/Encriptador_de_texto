@@ -29,9 +29,9 @@ function comprobarMayusculaYAcento(){
 }
 
 function encriptar(){
-    var nuevoMensaje = [];
+    var mensajeEncriptado = [];
     for(var i= 0;i<textarea.value.length;i++){
-        nuevoMensaje.push(textarea.value.charAt(i));
+        mensajeEncriptado.push(textarea.value.charAt(i));
     }
     if(comprobarMayusculaYAcento()){
         textarea.focus();
@@ -44,43 +44,47 @@ function encriptar(){
         for(var i= 0; i<textarea.value.length;i++){
             switch(textarea.value.charAt(i)){
                 case "a":
-                    nuevoMensaje[i]="ai";
+                    mensajeEncriptado[i]="ai";
                 break;
                 
                 case "e":
-                    nuevoMensaje[i] = "enter";
+                    mensajeEncriptado[i] = "enter";
                 break;
                 
                 case "i":
-                    nuevoMensaje[i] = "imes";
+                    mensajeEncriptado[i] = "imes";
                 break;
 
                 case "o":
-                    nuevoMensaje[i] = "ober";
+                    mensajeEncriptado[i] = "ober";
                 break;
 
                 case "u":
-                    nuevoMensaje[i] = "ufat";
+                    mensajeEncriptado[i] = "ufat";
                 break;
             }
         }
+        mostrarMensaje(mensajeEncriptado);
         
-        nuevoMensaje = nuevoMensaje.join("");
-        nuevoMensaje = nuevoMensaje.toString();
+    }
+   
+    
+}
+
+function mostrarMensaje(mensaje){
+        mensaje = mensaje.join("");
+        mensaje = mensaje.toString();
         noMessage.style.fontSize = '20px';
         noMessage.style.width = '263px';
         noMessage.style.height ='auto';
         noMessage.style.wordBreak ='break-all';
         noMessage.style.width='100%';
         noMessage.style.textAlign = 'center';
-        noMessage.innerHTML = nuevoMensaje;
+        noMessage.innerHTML = mensaje;
         text.style.visibility = 'hidden';
         text.style.position = 'absolute';
         copy.style.display = 'block';
         textarea.value = '';
-    }
-   
-    
 }
 function copiar(){
     var seleccion = document.createRange();
@@ -117,19 +121,7 @@ function desencriptar(){
             }
         }
     }
-    mensajeDesencriptado = mensajeDesencriptado.join("");
-    mensajeDesencriptado = mensajeDesencriptado.toString();
-    noMessage.style.fontSize = '20px';
-    noMessage.style.width = '263px';
-    noMessage.style.height ='auto';
-    noMessage.style.wordBreak ='break-all';
-    noMessage.style.width='100%';
-    noMessage.style.textAlign = 'center';
-    noMessage.innerHTML = mensajeDesencriptado;
-    text.style.visibility = 'hidden';
-    text.style.position = 'absolute';
-    copy.style.display = 'block';
-    textarea.value = '';
+    mostrarMensaje(mensajeDesencriptado);
     
 }
     
