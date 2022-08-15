@@ -52,12 +52,14 @@ textarea{
 .buttons .encrypt{
     background-color: #0A3871;
     color: #ffffff;
+    justify-self: center;
 }
 .buttons .encrypt:hover{
     background-color: #0a3871d9;
 }
 .buttons .decrypt{
     color: #0A3871;
+    justify-self: center;
 }
 .decrypt:hover{
     background-color: rgba(136, 136, 136, 0.2);
