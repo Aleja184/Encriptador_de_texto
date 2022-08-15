@@ -24,13 +24,16 @@ header img{
     border: none;
     height: 300px;
     background-color: #e5e5e569;
-    margin: 10px 0px 0px 10px;
+    margin: 10px 0px 0px 40px;
     color:#0A3871;
 }
 textarea{
     overflow: hidden;
     margin: 50px auto;
     display: block;
+}
+textarea::selection{
+    border: none;
 }
 ::placeholder{
     color: #0A3871;
@@ -61,6 +64,7 @@ textarea{
 }
 .buttons .encrypt:hover{
     background-color: #0a3871d9;
+    cursor: pointer;
 }
 .buttons .decrypt{
     color: #0A3871;
@@ -68,6 +72,7 @@ textarea{
 }
 .decrypt:hover{
     background-color: rgba(136, 136, 136, 0.2);
+    cursor: pointer;
 }
 .message{
     height: auto;
@@ -105,7 +110,10 @@ textarea{
     display: none;
     width: 230px;
 }
-
+#copy:hover{
+    background-color: rgba(136, 136, 136, 0.2);
+    cursor: pointer;
+}
 @media(min-width:600px){
     header{
         width: 100%;
@@ -171,6 +179,7 @@ textarea{
     .message{
         min-width: 300px;
         height: 90%;
+        margin-top: 0;
     }
     .image-message{
         display: block;
