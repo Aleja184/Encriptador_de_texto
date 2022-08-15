@@ -8,6 +8,7 @@ encrypt.onclick = encriptar;
 var copy = document.getElementById('copy');
 copy.onclick = copiar;
 decrypt.onclick = desencriptar;
+var imageMessage = document.getElementById('image-message');
 
 function autosize(){
     var el = this;
@@ -81,6 +82,7 @@ function mostrarMensaje(mensaje){
         noMessage.style.width='100%';
         noMessage.style.textAlign = 'center';
         noMessage.innerHTML = mensaje;
+        imageMessage.style.display = 'none';
         text.style.visibility = 'hidden';
         text.style.position = 'absolute';
         copy.style.display = 'block';
