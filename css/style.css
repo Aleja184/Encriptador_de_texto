@@ -24,17 +24,16 @@ header img{
     border: none;
     height: 300px;
     background-color: #e5e5e569;
-    margin: 10px 0px 0px 40px;
+    margin: 10px auto;
     color:#0A3871;
+    width: 80%;
 }
 textarea{
     overflow: hidden;
     margin: 50px auto;
     display: block;
 }
-textarea::selection{
-    border: none;
-}
+
 ::placeholder{
     color: #0A3871;
     font-family: 'Inter', sans-serif;
@@ -89,6 +88,11 @@ textarea::selection{
 .message .no-message{
     font-size: 24px;
     font-weight: 700;
+    border: none;
+    width: 90%;
+    text-align: center;
+    height: 55px;
+    margin: 10px auto;
 }
 .message .text2{
     padding-top: 10px;
@@ -159,6 +163,9 @@ textarea::selection{
         min-width: 500px;
         margin-left: 50px;
     }
+    .message .no-message{
+        height: 30px;
+    }
     .message p{
         text-align: center;
         width: 100%;
@@ -184,6 +191,9 @@ textarea::selection{
     .image-message{
         display: block;
         padding-top: 70px;
+    }
+    .message .no-message{
+        height: 80px;
     }
     .button-copy{
         padding-right: 40px;

@@ -9,7 +9,6 @@ var copy = document.getElementById('copy');
 copy.onclick = copiar;
 decrypt.onclick = desencriptar;
 var imageMessage = document.getElementById('image-message');
-
 function autosize(){
     var el = this;
     setTimeout(function(){
@@ -17,6 +16,12 @@ function autosize(){
         el.style.cssText = 'height:' + el.scrollHeight+ 'px';
     },0)
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+    noMessage.forEach((elemento) => {
+      elemento.style.height = '${elemento.scrollHeight}px'
+    })
+  })
 function comprobarMayusculaYAcento(){
     var textoEncriptar = textarea.value;
     var comprobacion = false;
