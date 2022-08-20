@@ -41,9 +41,10 @@ function encriptar(){
     }
     if(comprobarMayusculaYAcento()){
         textarea.focus();
-        noMessage.innerHTML = "Sólo ingrese letras minúsculas y sin acentos.<br>Intente de nuevo";
+        noMessage.value = "Sólo ingrese letras minúsculas y sin acentos.<br>Intente de nuevo";
         noMessage.style.fontSize = '20px';
         noMessage.style.fontWeight ='700';
+        noMessage.style.height='120px'
         copy.style.display = 'none';
         textarea.value = "";
     }else{
@@ -86,7 +87,8 @@ function mostrarMensaje(mensaje){
         noMessage.style.wordBreak ='break-all';
         noMessage.style.width='100%';
         noMessage.style.textAlign = 'center';
-        noMessage.innerHTML = mensaje;
+        noMessage.style.fontFamily="'Inter', sans-serif";
+        noMessage.value = mensaje;
         imageMessage.style.display = 'none';
         text.style.visibility = 'hidden';
         text.style.position = 'absolute';
@@ -94,12 +96,9 @@ function mostrarMensaje(mensaje){
         textarea.value = '';
 }
 function copiar(){
-    var seleccion = document.createRange();
-    seleccion.selectNodeContents(noMessage);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(seleccion);
-    var res = document.execCommand('copy');
-    window.getSelection().removeRange(seleccion);
+    noMessage.select();
+    navigator.clipboard.writeText(noMessage.value);
+    noMessage.value = ""
 }
 
 function desencriptar(){
