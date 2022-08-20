@@ -24,8 +24,9 @@ header img{
     border: none;
     height: 300px;
     background-color: #e5e5e569;
-    margin: 10px 0px 0px 40px;
+    margin: 10px auto;
     color:#0A3871;
+    width: 80%;
 }
 textarea{
     overflow: hidden;
@@ -109,6 +110,7 @@ textarea::selection{
     color: #0A3871;
     display: none;
     width: 230px;
+    margin: 10px auto;
 }
 #copy:hover{
     background-color: rgba(136, 136, 136, 0.2);
@@ -163,9 +165,7 @@ textarea::selection{
         text-align: center;
         width: 100%;
     }
-    #copy{
-        margin-left: 80px;
-    }
+    
 }
 
 @media(min-width:1024px){
@@ -185,7 +185,5 @@ textarea::selection{
         display: block;
         padding-top: 70px;
     }
-    .button-copy{
-        padding-right: 40px;
-    }
+    
 }
