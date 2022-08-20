@@ -83,12 +83,12 @@ function mostrarMensaje(mensaje){
         mensaje = mensaje.toString();
         noMessage.style.fontSize = '20px';
         noMessage.style.width = '263px';
-        noMessage.style.height ='auto';
+        noMessage.style.height ='90%';
         noMessage.style.wordBreak ='break-all';
         noMessage.style.width='100%';
         noMessage.style.textAlign = 'center';
         noMessage.style.fontFamily="'Inter', sans-serif";
-        noMessage.value = mensaje;
+        noMessage.innerHTML = mensaje;
         imageMessage.style.display = 'none';
         text.style.visibility = 'hidden';
         text.style.position = 'absolute';
@@ -97,9 +97,12 @@ function mostrarMensaje(mensaje){
         textarea.style.height = '300px';
 }
 function copiar(){
-    noMessage.select();
-    navigator.clipboard.writeText(noMessage.value);
-    noMessage.value = ""
+    var seleccion = document.createRange();
+    seleccion.selectNodeContents(noMessage);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(seleccion);
+    var res = document.execCommand('copy');
+    window.getSelection().removeRange(seleccion);
 }
 
 function desencriptar(){
