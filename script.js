@@ -94,6 +94,7 @@ function mostrarMensaje(mensaje){
         text.style.position = 'absolute';
         copy.style.display = 'block';
         textarea.value = '';
+        textarea.style.height = '300px';
 }
 function copiar(){
     noMessage.select();

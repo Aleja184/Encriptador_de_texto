@@ -112,6 +112,7 @@ textarea{
     color: #0A3871;
     display: none;
     width: 230px;
+    margin: 10px auto;
 }
 #copy:hover{
     background-color: rgba(136, 136, 136, 0.2);
@@ -169,9 +170,7 @@ textarea{
         text-align: center;
         width: 100%;
     }
-    #copy{
-        margin-left: 80px;
-    }
+    
 }
 
 @media(min-width:1024px){
@@ -190,11 +189,5 @@ textarea{
     .image-message{
         display: block;
         padding-top: 70px;
-    }
-    .message .no-message{
-        height: 80px;
-    }
-    .button-copy{
-        padding-right: 40px;
     }
 }
