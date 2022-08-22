@@ -94,7 +94,7 @@ textarea{
     height: auto;
     margin: 10px auto;
 }
-.message .text2{
+.message .message-write{
     font-size: 16px;
     font-weight: 400;
     margin: 0 auto;

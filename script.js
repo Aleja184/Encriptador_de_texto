@@ -2,7 +2,7 @@ var textarea = document.getElementById('write');
 var encrypt = document.getElementById('encrypt');
 var decrypt = document.getElementById('decrypt');
 var noMessage = document.getElementById('no-message');
-var text = document.getElementById('text2');
+var text = document.getElementById('message-write');
 textarea.addEventListener('keydown',autosize);
 encrypt.onclick = encriptar;
 var copy = document.getElementById('copy');
