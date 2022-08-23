@@ -109,16 +109,13 @@ textarea{
     justify-content: center;
     margin-top: auto;
 }
-#copy{
+.button-copy .decrypt:last-child{
     color: #0A3871;
     display: none;
     width: 230px;
     margin: 10px auto;
 }
-#copy:hover{
-    background-color: rgba(136, 136, 136, 0.2);
-    cursor: pointer;
-}
+
 @media(min-width:600px){
     header{
         width: 100%;
