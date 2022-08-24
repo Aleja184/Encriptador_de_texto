@@ -34,11 +34,16 @@ function comprobarMayusculaYAcento(){
     return comprobacion;
 }
 
-function encriptar(){
-    var mensajeEncriptado = [];
+function mensajeEnArray(){
+    var mensaje = [];
     for(var i= 0;i<textarea.value.length;i++){
-        mensajeEncriptado.push(textarea.value.charAt(i));
+        mensaje.push(textarea.value.charAt(i));
     }
+    return mensaje;
+}
+
+function encriptar(){
+     var mensajeEncriptado = mensajeEnArray();
     if(comprobarMayusculaYAcento()){
         textarea.focus();
         noMessage.value = "Sólo ingrese letras minúsculas y sin acentos.<br>Intente de nuevo";
@@ -106,10 +111,7 @@ function copiar(){
 }
 
 function desencriptar(){
-    var mensajeDesencriptado = [];
-    for(var i= 0; i<textarea.value.length;i++){
-        mensajeDesencriptado.push(textarea.value.charAt(i));
-    }
+   var mensajeDesencriptado = mensajeEnArray();
     for(var i = 0;i<textarea.value.length;i++){
         if(i<(textarea.value.length-1)){
             if(mensajeDesencriptado[i]=="a" && mensajeDesencriptado[i+1]=="i"){
