@@ -22,39 +22,59 @@ window.addEventListener("DOMContentLoaded", () => {
       elemento.style.height = '${elemento.scrollHeight}px'
     })
   })
-function comprobarMayusculaYAcento(){
-    var textoEncriptar = textarea.value;
+function comprobarAcento(textoEncriptar){
     var comprobacion = false;
     for(var i=0;i<textoEncriptar.length;i++){
-        if((textoEncriptar.charCodeAt(i)>=65 && textoEncriptar.charCodeAt(i)<=90) || (/[áéíóú]/.test(textoEncriptar.charAt(i)))){
+        if(/[áéíóú]/.test(textoEncriptar.charAt(i))){
             comprobacion = true;
             break;
-        }
+        }   
     }
     return comprobacion;
 }
 
 function mensajeEnArray(){
+    var texto = textarea.value.toLowerCase();
     var mensaje = [];
-    for(var i= 0;i<textarea.value.length;i++){
-        mensaje.push(textarea.value.charAt(i));
+    for(var i= 0;i<texto.length;i++){
+        mensaje.push(texto.charAt(i));
     }
     return mensaje;
+}
+function mostrarMensaje(mensaje){
+    mensaje = mensaje.join("");
+    mensaje = mensaje.toString();
+    mensaje = mensaje.toLowerCase();
+    noMessage.style.fontSize = '20px';
+    noMessage.style.width = '263px';
+    noMessage.style.height ='90%';
+    noMessage.style.wordBreak ='break-all';
+    noMessage.style.width='100%';
+    noMessage.style.textAlign = 'center';
+    noMessage.style.fontFamily="'Inter', sans-serif";
+    noMessage.innerHTML = mensaje;
+    imageMessage.style.display = 'none';
+    text.style.visibility = 'hidden';
+    text.style.position = 'absolute';
+    copy.style.display = 'block';
+    textarea.value = '';
+    textarea.style.height = '300px';
 }
 
 function encriptar(){
      var mensajeEncriptado = mensajeEnArray();
-    if(comprobarMayusculaYAcento()){
+     var texto = textarea.value.toLowerCase();
+    if(comprobarAcento(texto)){
         textarea.focus();
-        noMessage.value = "Sólo ingrese letras minúsculas y sin acentos.<br>Intente de nuevo";
+        noMessage.innerHTML = "Sólo ingrese letras sin acentos.<br>Intente de nuevo";
         noMessage.style.fontSize = '20px';
         noMessage.style.fontWeight ='700';
-        noMessage.style.height='120px'
+        noMessage.style.height='auto'
         copy.style.display = 'none';
         textarea.value = "";
     }else{
-        for(var i= 0; i<textarea.value.length;i++){
-            switch(textarea.value.charAt(i)){
+        for(var i= 0; i<texto.length;i++){
+            switch(texto.charAt(i)){
                 case "a":
                     mensajeEncriptado[i]="ai";
                 break;
@@ -83,24 +103,7 @@ function encriptar(){
     
 }
 
-function mostrarMensaje(mensaje){
-        mensaje = mensaje.join("");
-        mensaje = mensaje.toString();
-        noMessage.style.fontSize = '20px';
-        noMessage.style.width = '263px';
-        noMessage.style.height ='90%';
-        noMessage.style.wordBreak ='break-all';
-        noMessage.style.width='100%';
-        noMessage.style.textAlign = 'center';
-        noMessage.style.fontFamily="'Inter', sans-serif";
-        noMessage.innerHTML = mensaje;
-        imageMessage.style.display = 'none';
-        text.style.visibility = 'hidden';
-        text.style.position = 'absolute';
-        copy.style.display = 'block';
-        textarea.value = '';
-        textarea.style.height = '300px';
-}
+
 function copiar(){
     var seleccion = document.createRange();
     seleccion.selectNodeContents(noMessage);
