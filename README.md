@@ -1,5 +1,6 @@
 <h1 align="center"> Encriptador de texto </h1>
-![Encriptador](https://user-images.githubusercontent.com/78225423/212963350-152303c3-9f80-4aa5-a892-078743b0c922.png)
+
+![encriptador](https://user-images.githubusercontent.com/78225423/212967368-53d8f8da-d4fe-44fd-87e3-7dfdc7d4a629.png)
 
 <h4 >
 Este encriptador de texto es desarrollado como primer Challenge del programa Oracle Next Education.
@@ -17,7 +18,7 @@ Este encriptador de texto es desarrollado como primer Challenge del programa Ora
 `La letra "o" es convertida para "ober"`
 `La letra "u" es convertida para "ufat"`
 
-##:fa-check-square: Tecnologías usadas
+## :white_check_mark: Tecnologías usadas
 - HTML5
 - CSS3
 - JavaScript
