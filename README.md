@@ -5,7 +5,7 @@
 Este encriptador de texto es desarrollado como primer Challenge del programa Oracle Next Education.
 </h4>
 
-## :fa-wrench: Funcionalidades
+## :hammer: Funcionalidades
 
 - `Funcionalidad 1` :  Se escribe un texto que sólo tenga letras minúsculas y sin acentos. El programa se encarga de válidar esto.
 
